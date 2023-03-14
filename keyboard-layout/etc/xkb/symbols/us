@@ -1,0 +1,30 @@
+xkb_symbols "oz" {
+  include "us(dvorak)"
+  include "level3(ralt_switch)"
+  include "level3(rwin_switch)"
+  include "eurosign(4)"
+
+  name[Group1] = "English (Dvorak-oz)";
+
+  key <AE02> { [ NoSymbol, NoSymbol, twosuperior, oneeighth ] };
+  key <AE03> { [ NoSymbol, NoSymbol, threesuperior ] };
+
+  key <AD03> { [ NoSymbol, NoSymbol, 0x01002026, periodcentered ] };
+  key <AD08> { [ NoSymbol, NoSymbol,  copyright                 ] };
+  key <AD09> { [ NoSymbol, NoSymbol, registered                 ] };
+  key <AD11> { [ NoSymbol, NoSymbol, 0x0100203d,  0x01002e18    ] };
+
+  key <AC01> { [ NoSymbol, NoSymbol, aring,          Aring      ] };
+  key <AC02> { [ NoSymbol, NoSymbol, odiaeresis,     Odiaeresis ] };
+  key <AC03> { [ NoSymbol, NoSymbol, adiaeresis,     Adiaeresis ] };
+  key <AC04> { [ NoSymbol, NoSymbol, udiaeresis,     Udiaeresis ] };
+  key <AC05> { [ NoSymbol, NoSymbol,   kana_TSU,       kana_tsu ] };
+  key <AC08> { [ NoSymbol, NoSymbol,  trademark                 ] };
+  key <AC10> { [ NoSymbol, NoSymbol,     ssharp                 ] };
+
+//  key <AB02> { [ NoSymbol, NoSymbol,     oslash,         Oslash ] };
+//  key <AB03> { [ NoSymbol, NoSymbol,         ae,             AE ] };
+
+  key <CAPS> { [ Escape ] };
+
+};
