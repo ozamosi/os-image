@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+	<name>us</name>
+      </configItem>
+      <variantList>
+	<variant>
+	  <configItem>
+	    <name>oz</name>
+	    <shortDescription>Dvorak-oz</shortDescription>
+	    <description>English (Dvorak-oz)</description>
+	  </configItem>
+	</variant>
+      </variantList>
+    </layout>
+  </layoutList>
+</xkbConfigRegistry>

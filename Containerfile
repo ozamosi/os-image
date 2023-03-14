@@ -19,6 +19,8 @@ ARG IMAGE_NAME="${IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 ARG KERNEL_VERSION="${KERNEL_VERSION:-6.9.7-200.fc40.x86_64}"
 
+ADD keyboard-layout/etc/xkb /etc/xkb
+
 COPY sys_files/usr /usr
 
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
