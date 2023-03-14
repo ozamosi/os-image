@@ -20,6 +20,8 @@ COPY github-release-install.sh \
      packages.json \
         /tmp/
 
+ADD keyboard-layout/etc/xkb /etc/xkb
+
 COPY --from=config /rpms /tmp/rpms
 COPY --from=akmods /rpms/ublue-os /tmp/rpms
 COPY sys_files/usr /usr
