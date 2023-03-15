@@ -28,18 +28,7 @@ jobs:
           - ${{ inputs.fedora_version }}
         image_name:
           - silverblue
-          - kinoite
-          - sericea
-          - onyx
-          - base
-          - lazurite
-          - mate
-          - vauxite
-        exclude:
-          # There is currently no Fedora 40 version of mate
-          - image_name: mate
-            fedora_version: 40
-
+        build_target: [nokmods]
     steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
