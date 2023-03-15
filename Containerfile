@@ -18,6 +18,7 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 ARG KERNEL_VERSION="${KERNEL_VERSION:-6.9.7-200.fc40.x86_64}"
 
 ADD keyboard-layout/etc/xkb /etc/xkb
+ADD mousebuttons/usr/lib/udev/hwdb.d/61-kensington-mouse-buttons.hwdb /usr/lib/udev/hwdb.d/61-kensington-mouse-buttons.hwdb
 
 COPY sys_files/usr /usr
 
