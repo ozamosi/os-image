@@ -1,8 +1,8 @@
 # Main
 
-[![build-ublue](https://github.com/ublue-os/main/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/main/actions/workflows/build.yml)
+[![build-ublue](https://github.com/ozamosi/os-image/actions/workflows/build.yml/badge.svg)](https://github.com/ozamosi/os-image/actions/workflows/build.yml)
 
-A common main image for all other uBlue images, with minimal (but important) adjustments to Fedora. <3  
+A lightly personalised version of [ublue/main](https://github.com/ublue-os/main)
 
 1. [Features](#Features)
 1. [Tips and Tricks](#Tips-and-Tricks)
@@ -13,21 +13,7 @@ A common main image for all other uBlue images, with minimal (but important) adj
 
 ## What is this?
 
-You should be familiar with [image-based desktops](https://silverblue.fedoraproject.org/about). These are Fedora OStree images that have been modified with the following quality of life features:
-
-## Features
-
-- Start with a Fedora image
-- Adds the following packages to the base image:
-  - Hardware acceleration and codecs
-  - `distrobox` for terminal CLI and user package installation
-  - A selection of [udev rules and service units](https://github.com/ublue-os/config)
-  - [libratbag](https://github.com/libratbag/libratbag), to configure supported mice via [piper](https://github.com/libratbag/piper)
-  - Several pre-built [drivers/akmods](https://github.com/ublue-os/akmods)
-  - Various other tools: check out the [complete list of packages](https://github.com/ublue-os/main/blob/main/packages.json)
-- Sets automatic staging of updates for the system
-- Sets flatpaks to update twice a day
-- Everything else (desktop, artwork, etc) remains stock so you can use this as a good starting image
+See [ublue/main](https://github.com/ublue-os/main) - this has some personal changes.
 
 ## Tips and Tricks
 
@@ -59,40 +45,11 @@ To rebase an existing Silverblue/Kinoite machine to the latest release (38):
 
     sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/silverblue-main:38
 
-**Kinoite (KDE)**
-
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/kinoite-main:38
-    
-**LXQt**
-
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/lxqt-main:38
-    
-**MATE**
-
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/mate-main:38
-    
-**Sericea (Sway)** 
-Recommended only for advanced users
-
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/sericea-main:38
-
-**Vauxite (XFCE)**
-    
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/vauxite-main:38
-
-**Base**
-
-Which does not come with any desktops or window managers:
-
-    sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/base-main:38
-    
-</details>
-
 ## Verification
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
-    cosign verify --key cosign.pub ghcr.io/ublue-os/silverblue-main
+    cosign verify --key cosign.pub ghcr.io/ozamosi/os-image
 
 If you're forking this repo you should [read the docs](https://docs.github.com/en/actions/security-guides/encrypted-secrets) on keeping secrets in github. You need to [generate a new keypair](https://docs.sigstore.dev/cosign/overview/) with cosign. The public key can be in your public repo (your users need it to check the signatures), and you can paste the private key in Settings -> Secrets -> Actions.
 
