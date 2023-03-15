@@ -21,6 +21,7 @@ COPY github-release-install.sh \
         /tmp/
 
 ADD keyboard-layout/etc/xkb /etc/xkb
+ADD mousebuttons/usr/lib/udev/hwdb.d/61-kensington-mouse-buttons.hwdb /usr/lib/udev/hwdb.d/61-kensington-mouse-buttons.hwdb
 
 COPY --from=config /rpms /tmp/rpms
 COPY --from=akmods /rpms/ublue-os /tmp/rpms
