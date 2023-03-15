@@ -28,13 +28,6 @@ jobs:
           - ${{ inputs.fedora_version }}
         image_name:
           - silverblue
-          - kinoite
-          - sericea
-          - onyx
-          - base
-          - lazurite
-          - vauxite
-
     steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
