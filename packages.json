@@ -56,6 +56,9 @@
                 "wireguard-tools",
                 "yubikey-manager",
                 "zstd"
+                "zstd",
+                "wireguard-tools",
+                "gstreamer1-plugins-bad-free-extras"
             ],
             "silverblue": [
                 "adw-gtk3-theme",
