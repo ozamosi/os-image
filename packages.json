@@ -40,7 +40,8 @@
                 "traceroute",
                 "vim",
                 "zstd",
-                "wireguard-tools"
+                "wireguard-tools",
+                "gstreamer1-plugins-bad-free-extras"
             ],
             "silverblue": [
                 "adw-gtk3-theme",
