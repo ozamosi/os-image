@@ -10,16 +10,12 @@
                 "ffmpeg",
                 "ffmpeg-libs",
                 "ffmpegthumbnailer",
-                "fzf",
                 "google-noto-sans-balinese-fonts",
                 "google-noto-sans-cjk-fonts",
                 "google-noto-sans-javanese-fonts",
                 "google-noto-sans-sundanese-fonts",
                 "grub2-tools-extra",
-                "heif-pixbuf-loader",
-                "htop",
                 "intel-media-driver",
-                "just",
                 "kernel-tools",
                 "libheif-freeworld",
                 "libheif-tools",
@@ -44,11 +40,8 @@
                 "symlinks",
                 "tcpdump",
                 "traceroute",
-                "vim",
                 "wireguard-tools",
-                "zstd"
                 "zstd",
-                "wireguard-tools",
                 "gstreamer1-plugins-bad-free-extras"
             ],
             "silverblue": [
