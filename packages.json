@@ -43,6 +43,7 @@
                 "wireguard-tools",
                 "zstd",
                 "gstreamer1-plugins-bad-free-extras"
+                "docker-ce", "docker-ce-cli", "containerd.io", "docker-buildx-plugin"
             ],
             "silverblue": [
                 "adw-gtk3-theme",

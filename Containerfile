@@ -27,6 +27,9 @@ COPY --from=config /rpms /tmp/rpms
 COPY --from=akmods /rpms/ublue-os /tmp/rpms
 COPY sys_files/usr /usr
 
+RUN curl -L https://download.docker.com/linux/fedora/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
+
+
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/install.sh && \
     /tmp/post-install.sh && \
