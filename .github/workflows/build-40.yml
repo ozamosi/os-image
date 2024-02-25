@@ -1,10 +1,13 @@
 name: ublue main 40
 on:
-  pull_request:
-  merge_group:
+  push:
   schedule:
     - cron: '5 15 * * *'  # 3pm-ish UTC everyday (timed against official fedora container pushes)
-  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
 
 jobs:
   build:
