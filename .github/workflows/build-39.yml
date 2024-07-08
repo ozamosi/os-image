@@ -5,6 +5,11 @@ on:
     - cron: '5 4 * * *'  # 4am-ish UTC everyday (timed against official fedora container pushes)
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   build:
     name: build
