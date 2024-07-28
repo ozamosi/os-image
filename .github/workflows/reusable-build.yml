@@ -136,12 +136,7 @@ jobs:
               echo "inspected image version must not be empty or null"
               exit 1
             fi
-            linux=$(skopeo inspect docker://${{ env.IMAGE_REGISTRY }}/main-kernel:${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
-            AKMODS_KERNEL_VERSION=$(skopeo inspect docker://${{ env.IMAGE_REGISTRY }}/akmods:main-${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
-            if [[ "${linux}" != "${AKMODS_KERNEL_VERSION}" ]]; then
-              echo "Kernel Versions do not match between AKMODS and Cached-Kernel."
-              exit 1
-            fi
+            linux=$(skopeo inspect docker://ghcr.io/ublue-os/main-kernel:${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
             echo "KERNEL_VERSION=$linux" >> $GITHUB_ENV
             echo "SOURCE_IMAGE_VERSION=$ver" >> $GITHUB_ENV
 
@@ -154,8 +149,7 @@ jobs:
             # pull the base image used for FROM in containerfile so
             # we can retry on that unfortunately common failure case
             podman pull quay.io/${{ env.SOURCE_ORG }}/${{ env.SOURCE_IMAGE }}:${{ matrix.fedora_version }}
-            podman pull ${{ env.IMAGE_REGISTRY }}/akmods:main-${{ matrix.fedora_version }}
-            podman pull ${{ env.IMAGE_REGISTRY }}/main-kernel:${{ env.KERNEL_VERSION }}
+            podman pull ghcr.io/ublue-os/main-kernel:${{ env.KERNEL_VERSION }}
 
       # Generate image metadata
       - name: Image Metadata
@@ -205,11 +199,8 @@ jobs:
           podman rm -f ${{env.IMAGE_NAME}}-$(echo "${{ steps.generate-tags.outputs.alias_tags }}" | cut -d " " -f 1)
           sbverify --list vmlinuz
           curl --retry 3 -Lo kernel-sign.der https://github.com/ublue-os/kernel-cache/raw/main/certs/public_key.der
-          curl --retry 3 -Lo akmods.der https://github.com/ublue-os/kernel-cache/raw/main/certs/public_key_2.der
           openssl x509 -in kernel-sign.der -out kernel-sign.crt
-          openssl x509 -in akmods.der -out akmods.crt
           sbverify --cert kernel-sign.crt vmlinuz || exit 1
-          sbverify --cert akmods.crt vmlinuz || exit 1
 
       # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
       # https://github.com/macbre/push-to-ghcr/issues/12
