@@ -24,7 +24,6 @@ curl -L https://pkgs.tailscale.com/stable/fedora/tailscale.repo -o /etc/yum.repo
 
 rpm-ostree install \
     /tmp/rpms/*.rpm \
-    /tmp/akmods-rpms/*.rpm \
     fedora-repos-archive
 
 # Handle Kernel Skew with override replace
