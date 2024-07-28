@@ -20,6 +20,8 @@ curl -Lo /etc/yum.repos.d/_copr_kylegospo_oversteer.repo https://copr.fedorainfr
 
 RUN curl -L https://download.docker.com/linux/fedora/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
 
+curl -L https://pkgs.tailscale.com/stable/fedora/tailscale.repo -o /etc/yum.repos.d/tailscale.repo
+
 rpm-ostree install \
     /tmp/rpms/*.rpm \
     /tmp/rpm-repos/*.rpm \

@@ -43,7 +43,8 @@
                 "yubikey-manager",
                 "zstd",
                 "gstreamer1-plugins-bad-free-extras",
-                "docker-ce", "docker-ce-cli", "containerd.io", "docker-buildx-plugin"
+                "docker-ce", "docker-ce-cli", "containerd.io", "docker-buildx-plugin",
+                "tailscale"
             ],
             "silverblue": [
                 "adw-gtk3-theme",
