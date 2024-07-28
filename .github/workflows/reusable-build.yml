@@ -130,7 +130,7 @@ jobs:
               echo "inspected image version must not be empty or null"
               exit 1
             fi
-            linux=$(skopeo inspect docker://${{ env.IMAGE_REGISTRY }}/main-kernel:${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
+            linux=$(skopeo inspect docker://ghcr.io/ublue-os/main-kernel:${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
             AKMODS_KERNEL_VERSION=$(skopeo inspect docker://${{ env.IMAGE_REGISTRY }}/akmods:main-${{ matrix.fedora_version }} | jq -r '.Labels["ostree.linux"]')
             if [[ "${linux}" != "${AKMODS_KERNEL_VERSION}" ]]; then
               echo "Kernel Versions do not match between AKMODS and Cached-Kernel."
