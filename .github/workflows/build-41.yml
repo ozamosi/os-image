@@ -1,5 +1,10 @@
 name: ublue main 41
 
+permissions:
+  packages: write
+  id-token: write 
+  contents: read
+
 on:
   push:
   schedule:
